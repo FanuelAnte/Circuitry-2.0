@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgaa4hsxdx5wt"]
+
+[ext_resource type="Script" path="res://Scripts/main_game.gd" id="1_glsrt"]
+[ext_resource type="PackedScene" uid="uid://pylk14ft6ib7" path="res://Scenes/Components/graph.tscn" id="1_vcigg"]
+[ext_resource type="PackedScene" uid="uid://b0lvby6e8yfs2" path="res://Scenes/floating_menu.tscn" id="2_dcmba"]
+
+[node name="MainGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_glsrt")
+metadata/_edit_use_anchors_ = true
+
+[node name="GraphEdit" parent="." instance=ExtResource("1_vcigg")]
+layout_mode = 1
+anchors_preset = -1
+
+[node name="FloatingMenu" parent="." instance=ExtResource("2_dcmba")]
+offset_left = -256.0
+offset_right = -64.0

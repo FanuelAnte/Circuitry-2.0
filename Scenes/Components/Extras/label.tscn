@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b2skpxg2qeabc"]
+
+[node name="Label" type="Label" groups=["value_label"]]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "0"
+horizontal_alignment = 1

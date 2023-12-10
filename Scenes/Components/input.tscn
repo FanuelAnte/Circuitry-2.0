@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7epflmpri2g1"]
+
+[ext_resource type="Script" path="res://Scripts/input.gd" id="1_qxpo8"]
+
+[node name="Input" type="GraphNode"]
+offset_right = 192.0
+offset_bottom = 192.0
+title = "Input"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+script = ExtResource("1_qxpo8")
+
+[node name="Controls" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="HBox" type="HBoxContainer" parent="Controls"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="AddBtn" type="Button" parent="Controls/HBox"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+text = "+"
+
+[node name="RmvBtn" type="Button" parent="Controls/HBox"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+text = "-"
+
+[connection signal="pressed" from="Controls/HBox/AddBtn" to="." method="_on_add_btn_pressed"]
+[connection signal="pressed" from="Controls/HBox/RmvBtn" to="." method="_on_rmv_btn_pressed"]

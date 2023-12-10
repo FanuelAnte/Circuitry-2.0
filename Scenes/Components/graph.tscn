@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://pylk14ft6ib7"]
+
+[ext_resource type="Script" path="res://Scripts/graph.gd" id="1_3p3g6"]
+[ext_resource type="PackedScene" uid="uid://tl0yee7hyi18" path="res://Scenes/Components/output.tscn" id="2_c4ouw"]
+[ext_resource type="PackedScene" uid="uid://c7epflmpri2g1" path="res://Scenes/Components/input.tscn" id="3_wj1p6"]
+
+[node name="Graph" type="GraphEdit"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+snapping_distance = 16
+right_disconnects = true
+connection_lines_curvature = 0.4
+connection_lines_thickness = 1.0
+zoom = 0.5
+zoom_min = 0.2
+zoom_max = 2.0
+zoom_step = 1.1
+minimap_size = Vector2(160, 90)
+minimap_opacity = 0.5
+show_menu = false
+script = ExtResource("1_3p3g6")
+metadata/_edit_use_anchors_ = true
+
+[node name="Output" parent="." instance=ExtResource("2_c4ouw")]
+layout_mode = 2
+offset_left = 720.0
+offset_top = 240.0
+offset_right = 912.0
+offset_bottom = 432.0
+scale = Vector2(0.5, 0.5)
+mouse_filter = 1
+position_offset = Vector2(1440, 480)
+
+[node name="Input" parent="." instance=ExtResource("3_wj1p6")]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 240.0
+offset_right = 352.0
+offset_bottom = 432.0
+scale = Vector2(0.5, 0.5)
+mouse_filter = 1
+position_offset = Vector2(320, 480)
+
+[connection signal="connection_request" from="." to="." method="_on_connection_request"]
+[connection signal="disconnection_request" from="." to="." method="_on_disconnection_request"]
