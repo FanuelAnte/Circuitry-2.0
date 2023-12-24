@@ -41,21 +41,19 @@ func _on_rmv_btn_pressed() -> void:
 		if i.is_in_group("value_label"):
 			index = i.get_index()
 	
-	var graph: GraphEdit = get_parent()
-	var graph_connections: Array = graph.get_connection_list()
+	var graph_node: GraphEdit = get_parent()
+	var graph_connections: Array = graph_node.connection_list
 
 	for connection: Dictionary in graph_connections:
-		if connection["from_node"] == self.name:
-			graph.disconnect_node(connection["from_node"], index, connection["to_node"], connection["to_port"])
-	
+		if connection["to_node"] == self.name:
+			graph_node.disconnect_node(connection["from_node"], connection["from_port"], connection["to_node"], index)
+			
 	if get_child(index).is_in_group("value_label"):
 		#var slot_size: = get_child(index).rect_size.y
 		
-		# TODO: remove the connection line before queue_freeing.
-		
 		get_child(index).queue_free()
 		#self.rect_size.y -= slot_size
-	
+		
 		input_values.remove_at(index)
 		set_slot_enabled_left(index, false)
 

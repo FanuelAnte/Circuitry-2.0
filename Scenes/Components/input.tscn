@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/input.gd" id="1_qxpo8"]
 
-[node name="Input" type="GraphNode"]
+[node name="Input" type="GraphNode" groups=["io_nodes"]]
 offset_right = 192.0
 offset_bottom = 192.0
 title = "INPUT"

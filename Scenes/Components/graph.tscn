@@ -27,13 +27,26 @@ metadata/_edit_horizontal_guides_ = [1080.0]
 
 [node name="Output" parent="." instance=ExtResource("2_c4ouw")]
 layout_mode = 2
+offset_left = 1500.0
+offset_top = 500.0
+offset_right = 1692.0
+offset_bottom = 692.0
 scale = Vector2(0.5, 0.5)
 mouse_filter = 1
+position_offset = Vector2(3000, 1000)
 
 [node name="Input" parent="." instance=ExtResource("3_wj1p6")]
 layout_mode = 0
+offset_left = 250.0
+offset_top = 500.0
+offset_right = 442.0
+offset_bottom = 692.0
 scale = Vector2(0.5, 0.5)
 mouse_filter = 1
+position_offset = Vector2(500, 1000)
 
 [connection signal="connection_request" from="." to="." method="_on_connection_request"]
+[connection signal="delete_nodes_request" from="." to="." method="_on_delete_nodes_request"]
 [connection signal="disconnection_request" from="." to="." method="_on_disconnection_request"]
+[connection signal="node_deselected" from="." to="." method="_on_node_deselected"]
+[connection signal="node_selected" from="." to="." method="_on_node_selected"]

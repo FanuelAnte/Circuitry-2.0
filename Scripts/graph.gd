@@ -1,6 +1,7 @@
 extends GraphEdit
 
 var connection_list: Array
+var selected_nodes: Dictionary = {}
 
 func _ready() -> void:
 	pass
@@ -30,3 +31,22 @@ func _on_connection_request(from_node: StringName, from_port: int, to_node: Stri
 
 func _on_disconnection_request(from_node: StringName, from_port: int, to_node: StringName, to_port: int) -> void:
 	self.disconnect_node(from_node, from_port, to_node, to_port)
+
+func remove_connections_to_node(node: Node) -> void:
+	for connection: Dictionary in connection_list:
+		if connection.to_node == node.name or connection.from_node == node.name:
+			self.disconnect_node(connection.from_node, connection.from_port, connection.to_node, connection.to_port)
+
+func _on_delete_nodes_request(nodes: Array) -> void:
+	for node: Node in selected_nodes.keys():
+		if selected_nodes[node] and !(node.is_in_group("io_nodes")):
+			remove_connections_to_node(node)
+			node.queue_free()
+	selected_nodes = {}
+
+func _on_node_selected(node: Node) -> void:
+	selected_nodes[node] = true
+
+func _on_node_deselected(node: Node) -> void:
+	selected_nodes[node] = false
+

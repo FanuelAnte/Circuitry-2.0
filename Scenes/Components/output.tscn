@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/output.gd" id="1_r0jum"]
 
-[node name="Output" type="GraphNode"]
+[node name="Output" type="GraphNode" groups=["io_nodes"]]
 offset_right = 192.0
 offset_bottom = 192.0
 title = "OUTPUT"
