@@ -6,7 +6,7 @@ const LABEL = preload("res://Scenes/Components/Extras/label.tscn")
 var input_values: Array = []
 
 func _ready() -> void:
-	pass
+	_on_add_btn_pressed()
 
 func _process(delta: float) -> void:
 	execute()

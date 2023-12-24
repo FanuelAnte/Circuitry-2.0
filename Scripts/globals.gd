@@ -1,6 +1,6 @@
 extends Node
 
-var line_colors: Dictionary = {"active" : Color.SKY_BLUE, "inactive" : Color.CORNSILK}
+var line_colors: Dictionary = {"active" : Color.CORAL, "inactive" : Color.LIGHT_SLATE_GRAY}
 
 func _ready() -> void:
 	pass

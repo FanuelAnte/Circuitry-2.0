@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Scripts/and.gd" id="1_8h73s"]
 
 [node name="And" type="GraphNode"]
-offset_right = 192.0
-offset_bottom = 192.0
+offset_right = 128.0
+offset_bottom = 128.0
 title = "AND"
 slot/0/left_enabled = true
 slot/0/left_type = 0
@@ -36,13 +36,13 @@ slot/2/draw_stylebox = true
 script = ExtResource("1_8h73s")
 
 [node name="Input1" type="Control" parent="."]
-custom_minimum_size = Vector2(0, 40)
+custom_minimum_size = Vector2(0, 22)
 layout_mode = 2
 
 [node name="Output1" type="Control" parent="."]
-custom_minimum_size = Vector2(0, 40)
+custom_minimum_size = Vector2(0, 22)
 layout_mode = 2
 
 [node name="Input2" type="Control" parent="."]
-custom_minimum_size = Vector2(0, 40)
+custom_minimum_size = Vector2(0, 22)
 layout_mode = 2

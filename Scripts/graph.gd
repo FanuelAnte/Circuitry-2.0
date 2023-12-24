@@ -7,7 +7,6 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	update_connections()
-	#print(connection_list)
 
 func update_connections() -> void:
 	var connections: Array = self.get_connection_list()

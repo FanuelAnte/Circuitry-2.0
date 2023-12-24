@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Scripts/not.gd" id="1_8e0vh"]
 
 [node name="Not" type="GraphNode"]
-offset_right = 192.0
-offset_bottom = 192.0
+offset_right = 128.0
+offset_bottom = 128.0
 title = "NOT"
 slot/0/left_enabled = true
 slot/0/left_type = 0
@@ -18,5 +18,5 @@ slot/0/draw_stylebox = true
 script = ExtResource("1_8e0vh")
 
 [node name="Output1" type="Control" parent="."]
-custom_minimum_size = Vector2(0, 128)
+custom_minimum_size = Vector2(0, 66)
 layout_mode = 2

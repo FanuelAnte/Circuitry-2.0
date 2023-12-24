@@ -6,7 +6,8 @@ const TOGGLE = preload("res://Scenes/Components/Extras/toggle.tscn")
 var output_values: Array = []
 
 func _ready() -> void:
-	pass
+	_on_add_btn_pressed()
+	_on_add_btn_pressed()
 
 func _process(delta: float) -> void:
 	for i in range(output_values.size()):

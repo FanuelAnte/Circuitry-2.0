@@ -3,11 +3,19 @@ extends GraphNode
 var input_values: Array = [0, 0]
 var output_values: Array = [0]
 
+var is_being_dragged: bool = true
+
+var graph_edit: GraphEdit
+
 func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
 	execute()
+	if is_being_dragged:
+		self.position_offset = (get_viewport().get_mouse_position() + graph_edit.scroll_offset) / graph_edit.zoom
+
+		
 	for i in range(output_values.size()):
 		if output_values[i] == 1:
 			set_slot_color_right(1, Color(Globals.line_colors["active"]))
