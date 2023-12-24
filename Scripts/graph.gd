@@ -16,8 +16,8 @@ func update_connections() -> void:
 		var from_path: NodePath = NodePath(connections[i].from_node)
 		var node: GraphNode = self.get_node(from_path)
 		if is_instance_valid(node):
-			if node.right_port_values[connections[i].from_port] != null:
-				connections[i]["data"] = node.right_port_values[connections[i].from_port]
+			if node.output_values[connections[i].from_port] != null:
+				connections[i]["data"] = node.output_values[connections[i].from_port]
 		else:
 			connections[i]["data"] = 0
 		

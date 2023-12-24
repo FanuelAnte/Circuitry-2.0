@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://pylk14ft6ib7"]
+[gd_scene load_steps=6 format=3 uid="uid://pylk14ft6ib7"]
 
 [ext_resource type="Script" path="res://Scripts/graph.gd" id="1_3p3g6"]
 [ext_resource type="PackedScene" uid="uid://tl0yee7hyi18" path="res://Scenes/Components/output.tscn" id="2_c4ouw"]
 [ext_resource type="PackedScene" uid="uid://c7epflmpri2g1" path="res://Scenes/Components/input.tscn" id="3_wj1p6"]
+[ext_resource type="PackedScene" uid="uid://t36tiamcutrm" path="res://Scenes/Components/not.tscn" id="4_6lx4f"]
+[ext_resource type="PackedScene" uid="uid://bcxasvyg8ltm4" path="res://Scenes/Components/and.tscn" id="4_cfb02"]
 
 [node name="Graph" type="GraphEdit"]
 anchors_preset = 15
@@ -23,26 +25,42 @@ minimap_opacity = 0.5
 show_menu = false
 script = ExtResource("1_3p3g6")
 metadata/_edit_use_anchors_ = true
+metadata/_edit_horizontal_guides_ = [1080.0]
 
 [node name="Output" parent="." instance=ExtResource("2_c4ouw")]
 layout_mode = 2
-offset_left = 720.0
-offset_top = 240.0
-offset_right = 912.0
-offset_bottom = 432.0
+offset_left = 294.5
+offset_top = 293.0
+offset_right = 486.5
+offset_bottom = 485.0
 scale = Vector2(0.5, 0.5)
 mouse_filter = 1
-position_offset = Vector2(1440, 480)
+position_offset = Vector2(589, 586)
 
 [node name="Input" parent="." instance=ExtResource("3_wj1p6")]
 layout_mode = 0
-offset_left = 160.0
-offset_top = 240.0
-offset_right = 352.0
-offset_bottom = 432.0
+offset_left = 169.5
+offset_top = 487.0
+offset_right = 361.5
+offset_bottom = 679.0
 scale = Vector2(0.5, 0.5)
 mouse_filter = 1
-position_offset = Vector2(320, 480)
+position_offset = Vector2(339, 974)
+
+[node name="And" parent="." instance=ExtResource("4_cfb02")]
+layout_mode = 0
+scale = Vector2(0.5, 0.5)
+mouse_filter = 1
+
+[node name="Not" parent="." instance=ExtResource("4_6lx4f")]
+layout_mode = 2
+offset_left = 0.5
+offset_top = 0.5
+offset_right = 192.5
+offset_bottom = 192.5
+scale = Vector2(0.5, 0.5)
+mouse_filter = 1
+position_offset = Vector2(1, 1)
 
 [connection signal="connection_request" from="." to="." method="_on_connection_request"]
 [connection signal="disconnection_request" from="." to="." method="_on_disconnection_request"]

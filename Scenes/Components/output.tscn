@@ -5,7 +5,7 @@
 [node name="Output" type="GraphNode"]
 offset_right = 192.0
 offset_bottom = 192.0
-title = "Output"
+title = "OUTPUT"
 slot/0/left_enabled = false
 slot/0/left_type = 0
 slot/0/left_color = Color(1, 1, 1, 1)
